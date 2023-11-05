@@ -47,9 +47,6 @@ export const FATTY_ALCOHOLS: Record<string, FattyAlcohol> = {
   },
 };
 
-function getFACellData(fa: FattyAlcohol, neo: number, npo: number): number {
-  return parseFloat((fa.mass + neo * EO + npo * PO).toFixed(2));
-}
 
 type TableCellData = string | number;
 
@@ -59,13 +56,17 @@ type TableCell = {
   near?: boolean;
 };
 
+function getFACellData(fa: FattyAlcohol, neo: number, npo: number): TableCellData {
+  return (fa.mass + neo * EO + npo * PO).toFixed(2);
+}
+
 function getCell(data: TableCellData, isChem: boolean, searchMass?: number): TableCell {
   const cell: TableCell = {
     data,
     isChem,
   };
   if (isChem && typeof data === "number" && searchMass) {
-    cell.near = Math.abs(data - searchMass) < 1;
+    cell.near = Math.abs(data - searchMass) < 2;
   }
   return cell;
 }
