@@ -57,7 +57,7 @@ type TableCell = {
 };
 
 function getFACellData(fa: FattyAlcohol, neo: number, npo: number): TableCellData {
-  return (fa.mass + neo * EO + npo * PO).toFixed(2);
+  return fa.mass + neo * EO + npo * PO;
 }
 
 function getCell(data: TableCellData, isChem: boolean, searchMass?: number): TableCell {

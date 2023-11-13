@@ -32,7 +32,7 @@
     <div class="table-data">
       <div :class="['table-row', `row-${i}`]" v-for="(row, i) in tableData" :key="i + 1">
         <div :class="['table-cell', `col-${j}`, cell.near ? 'near' : '']" v-for="(cell, j) in row" :key="j">
-          {{ cell.data }}
+          {{ typeof cell.data === 'number' ? cell.data.toFixed(2) : cell.data }}
         </div>
       </div>
     </div>
@@ -59,7 +59,7 @@ const allAlcohols = ref<string[]>(Object.keys(FATTY_ALCOHOLS));
 const currentFA = ref<string>(allAlcohols.value[0]);
 const tableData = computed(() => {
   const fa = FATTY_ALCOHOLS[currentFA.value];
-  return getFATable(fa, Number(searchMass.value), nEo.value, nPo.value);
+  return getFATable(fa, Number(searchMass.value), nEo.value + 1, nPo.value + 1);
 });
 </script>
 
