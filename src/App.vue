@@ -1,18 +1,11 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
+import { RouterView } from "vue-router";
 </script>
 
 <template>
-  <!-- <header class="app-header">
-    <RouterLink to="/">EoPo</RouterLink>
-  </header> -->
-  <content class="app-content">
+  <div class="app-content">
     <RouterView></RouterView>
-  </content>
+  </div>
 </template>
 
-<style scoped lang="scss">
-.app-header {
-  margin: 1em 0;
-}
-</style>
+<style scoped lang="scss"></style>

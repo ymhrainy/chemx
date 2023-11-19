@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
-import EoPoView from "../views/EoPoView.vue";
+import EoPoView from "../views/TheChemView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
