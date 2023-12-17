@@ -1,0 +1,16 @@
+{
+    "name": "ChemX",
+    "id": "/chem/",
+    "short_name": "ChemX",
+    "theme_color": "#1280d7",
+    "background_color": "#2196f3",
+    "display": "fullscreen",
+    "scope": "/chem/",
+    "start_url": "/chem/",
+    "icons": [
+        {
+            "src": "chem.png",
+            "sizes": "512x512"
+        }
+    ]
+}
